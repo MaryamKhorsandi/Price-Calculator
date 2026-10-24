@@ -8,10 +8,14 @@ def main():
     price = float(input())
 
     try:
-        tax_rate = float(input())
-        result = calculate_price(price, tax_rate)
+        tax = input()
     except EOFError:
+        tax = ""
+
+    if tax == "":
         result = calculate_price(price)
+    else:
+        result = calculate_price(price, float(tax))
 
     print(result)
 
